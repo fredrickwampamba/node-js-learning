@@ -1,0 +1,5 @@
+For this tutorial, check out the connection setting in the file client.js and the netServer.js file
+
+These connections can be used by  the client and server comunication apps or chat applications.
+
+here we a going to use the net module in the nodejs defaults
