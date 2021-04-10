@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="public/css/style.css">
+    </head>
+    <body>
+        <h1>Login</h1>
+        <p>Please fill in the details below</p>
+        <form action="/" method="post" id="form">
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" name="email">
+            </div>
+    
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" name="password">
+            </div>
+    
+            <div>
+                <button type="submit" name="Login">Login</button>
+            </div>
+        </form>
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+      $(document).ready(()=>{
+          $("#form").on("submit",(e)=>{
+            e.preventDefault();
+            $.ajax(
+                {
+                    url : '/',
+                    type : 'post',
+                    contentType : 'application/json',
+                    data : JSON.stringify($('#form').serializeArray()),
+                    success : (response)=>{
+                        console.log("successfully got response")
+                        console.log(response)
+                    }
+                }
+            )
+          })
+      })
+  </script>
+</html>
